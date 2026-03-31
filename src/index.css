@@ -1,0 +1,15 @@
+@font-face {
+    font-family: RedHat;
+    src: url(./assets/fonts/RedHatText-VariableFont_wght.ttf);
+    font-weight: 400 700;
+}
+
+@font-face {
+    font-family: RedHatItalized;
+    src: url(./assets/fonts/RedHatText-Italic-VariableFont_wght.ttf);
+    font-weight: 400 700;
+}
+
+body{
+    font-family: RedHat;
+}

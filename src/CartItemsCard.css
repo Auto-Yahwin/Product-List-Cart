@@ -1,0 +1,39 @@
+.group-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    /*flex-direction: column;*/
+    /*background-color: aliceblue;*/
+}
+
+.group-container-group{
+    /*background-color: beige;*/
+    display: flex;
+    flex-direction: column;
+
+}
+
+.count-price{
+    /*background-color: azure;*/
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: -5px;
+    height: 45px;
+}
+
+.cancel{
+    padding: 0 3px;
+    margin-bottom: 10px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+h6{
+    color: hsl(14, 86%, 42%);
+    font-size: 16px;
+    font-weight: 600;
+}

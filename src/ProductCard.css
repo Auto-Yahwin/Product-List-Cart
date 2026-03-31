@@ -1,0 +1,71 @@
+/*.product-grid-cell{
+    gap: 20px;
+}*/
+
+img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.add-to-cart{
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border: 1px solid hsl(14, 65%, 9%);
+    padding: 10px;
+    position: relative;
+    bottom: 25px;
+    left: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.manual-increase, .add-to-cart:hover{
+    border: 1px solid hsl(14, 86%, 42%);
+    cursor: pointer;
+}
+
+.manual-increase{
+    background-color: hsl(14, 86%, 42%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding: 8px 15px;
+    position: relative;
+    bottom: 25px;
+    left: 25%;
+}
+
+.decrease, .increase{
+    padding: 0 5px;
+    border-radius: 60%;
+    color: hsl(20, 50%, 98%);
+    border: 1px solid hsl(20, 50%, 98%);
+}
+
+.decrease:hover, .increase:hover{
+    background-color: hsl(20, 50%, 98%);
+    color: hsl(14, 86%, 42%);
+}
+
+h5{
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+}
+
+h6{
+    margin: -10px 0 5px 0;
+    font-weight: 400;
+}
+
+.product-grid-cell>p{
+    font-size: 12px;
+    color: hsl(14, 86%, 42%);
+    margin: 5px 0 15px 0;
+    font-weight: 600;
+}
