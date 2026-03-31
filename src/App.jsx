@@ -187,7 +187,8 @@ export default function App() {
             {dataWithId.map(elements =>
               (<ProductCard 
                 img={
-                  window.innerWidth<=500 ? elements.image.mobile : window.innerWidth > 500 && window.innerWidth <=1024 ? elements.image.tablet : elements.image.desktop}
+                  window.innerWidth<=500 ? `${import.meta.env.BASE_URL}${elements.image.mobile}` : window.innerWidth > 500 && window.innerWidth <=1024 ? `${import.meta.env.BASE_URL}${elements.image.tablet}` : `${import.meta.env.BASE_URL}${elements.image.desktop}`
+                }
                 name={elements.name}
                 category={elements.category}
                 count={elements.count}
