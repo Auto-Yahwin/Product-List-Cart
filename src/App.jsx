@@ -91,7 +91,7 @@ export default function App() {
           }
           return element
         })
-        setItemsIncrease(prevCount=>prevCount - 0.5)
+        setItemsIncrease(prevCount=>prevCount - 1)
 
         return updated.filter(item=>item.count >= 1)
       })

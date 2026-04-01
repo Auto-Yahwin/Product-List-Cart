@@ -13,7 +13,7 @@ export default function OrderConfirmation(props) {
                 props.properties.map(element=>(
                     <div className="item-card">
                         <div className="group1">
-                            <img src={element.image.thumbnail} alt="" />
+                            <img src={`${import.meta.env.BASE_URL}${element.image.thumbnail}`} alt="" />
                         </div>
                         <div className='group2'>
                             <h6>{element.name}</h6>
