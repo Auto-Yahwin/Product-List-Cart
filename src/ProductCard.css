@@ -7,12 +7,17 @@ img{
     border-radius: 10px;
 }
 
+.fa-icons{
+    height: 20px;
+    width: fit-content;
+}
+
 .add-to-cart{
     background-color: white;
     color: black;
     font-weight: 600;
     border: 1px solid hsl(14, 65%, 9%);
-    padding: 10px;
+    padding: 10px 17px;
     position: relative;
     bottom: 25px;
     left: 25%;
@@ -31,6 +36,7 @@ img{
     color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 14px;
     font-weight: 400;
     border: none;
@@ -41,19 +47,24 @@ img{
 }
 
 .decrease, .increase{
-    padding: 0 5px;
     border-radius: 60%;
     color: hsl(20, 50%, 98%);
     border: 1px solid hsl(20, 50%, 98%);
+    display: flex;
+    align-items: center;
 }
 
 .decrease:hover, .increase:hover{
     background-color: hsl(20, 50%, 98%);
-    color: hsl(14, 86%, 42%);
+}
+
+.decrease:hover img.icon,
+.increase:hover img.icon{
+    filter: brightness(0) saturate(100%) invert(35%) sepia(91%) saturate(1633%) hue-rotate(352deg) brightness(88%) contrast(92%);
 }
 
 h5{
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
     font-weight: 600;
 }

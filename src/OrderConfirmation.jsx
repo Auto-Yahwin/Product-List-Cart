@@ -3,7 +3,6 @@ import './OrderCOnfirmation.css'
 import { FaRegCheckCircle } from 'react-icons/fa'
 
 export default function OrderConfirmation(props) {
-    //props.clickEvent(selected)
 
     return(
         <div className="confirmation-card">

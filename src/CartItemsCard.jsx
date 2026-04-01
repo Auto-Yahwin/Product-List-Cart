@@ -12,7 +12,7 @@ export default function CartItemsCard(props) {
                     <p>${props.price*props.quantity}</p>
                 </div>
             </div>
-            <FaRegCircleXmark size="1.5em" onClick={props.remove} data-id={props.id} style={{fontWeight:600, cursor: "pointer", stroke: "white", strokeWidth: "20px"}} />
+            <FaRegCircleXmark size="1em" onClick={props.remove} data-id={props.id} className="fa-icon" />
         </div>
     )
 }

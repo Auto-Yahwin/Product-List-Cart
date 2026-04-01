@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 import CartItemsCard from "./CartItemsCard";
 import { useState } from "react";
 import OrderConfirmation from "./OrderConfirmation";
-import { FaCloud } from "react-icons/fa";
+//import { FaCloud } from "react-icons/fa";
 //Importations end here
 
 //App() begins here
@@ -16,19 +16,6 @@ export default function App() {
   const [confirmationPopup, setPopup] = useState(false)
   const [activeID, setActiveID] = useState(null)
   const [status, setStatus] = useState(false)
-  
-
-  // Create dataWithId once so generated IDs remain stable across renders.
-  // If `data.json` already contains a stable `id` field, prefer that instead.
-  /*const dataWithId = 
-    data.map(item => ({
-      id: crypto.randomUUID(),
-      count: 0,
-      active: false,
-      ...item
-    }))*/
-  
-
   const [dataWithId, setDataWithId] = useState(data.map(item => ({
       id: crypto.randomUUID(),
       count: 0,
@@ -53,22 +40,10 @@ export default function App() {
         return prev.indexOf(el) === i ? {...el, count: el.count + 1, active: true} : el}
     ))
 
-    /*stored[i].count >= 1 ? setStatus(true) : setStatus(false)*/ 
-    
-    //setChoosen(true)
-
     //updating the array that stores what has been clicked
     setSelected(function (prevState){
       if (prevState.length===0) {
-        //console.log(i)
-        //console.log(dataWithId);
-        
-        
-        //setTotal(dataWithId[i].price)
         setItemsIncrease(1)
-        //alert(choosen)
-        //console.log(setChoosen(true));
-        
         return [{...dataWithId[i], count: 1, active: true}]
       }
 
@@ -83,28 +58,12 @@ export default function App() {
       })
 
       if (found) {
-        /*setTotal(
-          updated.reduce((sum, item) => {
-          return sum + (item.price)*(item.count)
-        }, 0)
-        )*/ 
         return updated
       }
-
       //Updating total cost of items added to cart
-      /*setTotal(
-        [dataWithId[i], ...prevState].reduce((sum, item) => sum + (item.price) * (item.count) ,0)
-      )*/
-
       return [{...dataWithId[i], active: true, count: 1}, ...prevState]
     })
-    //console.log(selected);
-    //alert(choosen)
-    
-    
 
-    //console.log(selected);
-    
     setItemsIncrease(prevCount=>prevCount + 1)
 
     //function that manages adding items to cart stops here
@@ -113,14 +72,8 @@ export default function App() {
   //function that manages removing items from cart begins here
   function Remove(event) {
       const id=event.currentTarget.dataset.id;
-      
-      //if (condition) {
-        
-      //}
       setDataWithId(prev=>prev.map(el=>
       {
-        //console.log("prevID: ", el.id, id);
-        
         if (el.id === id) {
           if (el.count <= 1) {
             return {...el, count: el.count - 1, active: false}
@@ -128,7 +81,6 @@ export default function App() {
           return {...el, count: el.count - 1}
         }
         return el
-        /*(el.id === id && el.count <= 1) ? {...el, count: el.count - 1, active: false} : el*/
       }
       ))
 
@@ -137,24 +89,12 @@ export default function App() {
           if (element.id === id) {
             return {...element, count: element.count - 1}
           }
-
-          /*if (updated[id].count <= 0) {
-            setActiveID(null)
-          }*/
-          
           return element
         })
-        
-        /*setTotal(
-          updated.reduce((sum, item)=>sum + item.count*item.price, 0)
-        )*/
         setItemsIncrease(prevCount=>prevCount - 0.5)
 
         return updated.filter(item=>item.count >= 1)
       })
-
-
-
       //function that manages removing items from cart stops here
   }
 
@@ -162,11 +102,6 @@ export default function App() {
     setPopup(false)
     setSelected([])
   }
-  
-  //console.log(dataWithId);
-  
-  
-
 
   //return for App() begins here
   return(
@@ -200,7 +135,6 @@ export default function App() {
                 decrease={Remove}
                 ActiveID={setActiveID}
                 statusID={activeID}
-                //status={activeID === elements.id}
                 status={elements.active}
             />
             ))}
@@ -236,11 +170,10 @@ export default function App() {
                 <h2>${selected.reduce((init, value)=>init + (value.price*value.count), 0)}</h2>
               </div>
               <div className="label">
-                <FaCloud size="1em" color="hsl(159, 69%, 38%)" />
+                <img src={`${import.meta.env.BASE_URL}/images/icon-carbon-neutral.svg`} alt="carbon neutral icon" className="fa-icons" />
                 <p>This is a <span id="span">carbon-neutral</span> delivery</p>
               </div>
               <button onClick={()=>{
-                //handleClick(selected)
                 setPopup(true)
               }}>Confirm Order</button>
               

@@ -1,4 +1,3 @@
-import { FaCartPlus } from "react-icons/fa"
 import "./ProductCard.css"
 
 export default function ProductCard(props) {
@@ -6,36 +5,26 @@ export default function ProductCard(props) {
     function handleClick() {
         props.selectEvent(props.id)
         props.ActiveID(props.id)
-        //alert(props.id)
-        //console.log(props.ActiveID);
-        //console.log(window.innerWidth);
-        
     }
-
+    
     return(
-        <div className="product-grid-cell"
-        >
-            {/*console.log("status:", props.status, "id:", props.id)*/
-            /*console.log(props.statusID, typeof props.statusID, props.id, typeof props.id)*/
-            }
+        <div className="product-grid-cell">
             
             <img src={props.img} alt={`image from ${props.category} category`} style={{border: props.status ? "2px solid hsl(14, 86%, 42%)" : "1px solid transparent"}}
             />
             {
                 props.status ?
                     <button className="manual-increase">
-                        <div className="decrease">
-                            <h5 onClick={(event)=>props.decrease(event)} data-id={props.id}>-</h5>
+                        <div className="decrease" style={{padding: "6px 2px"}} onClick={(event)=>props.decrease(event)} data-id={props.id}>
+                            <img src={`${import.meta.env.BASE_URL}/images/icon-decrement-quantity.svg`} alt="decrement icon" className="icon" />
                         </div>
-                        
-                            <h5>{props.count}</h5>
-                        
-                        <div className="increase">
-                            <h5 onClick={()=>props.increase(props.id)}>+</h5>
+                        <h5>{props.count}</h5>
+                        <div className="increase" style={{padding: "3px 2px"}} onClick={()=>props.increase(props.id)}>
+                            <img src={`${import.meta.env.BASE_URL}/images/icon-increment-quantity.svg`} alt="increment icon"  className="icon" />
                         </div>
                     </button> :
                     <button className="add-to-cart" onClick={handleClick}>
-                        <FaCartPlus size="1.5em" color="hsl(14, 86%, 42%)" />
+                        <img src={`${import.meta.env.BASE_URL}/images/icon-add-to-cart.svg`} alt="add to cart icon" className="fa-icons" />
                         Add to Cart
                     </button>
             }
