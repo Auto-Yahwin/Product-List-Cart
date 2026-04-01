@@ -7,7 +7,7 @@ export default function CartItemsCard(props) {
             <div className="group-container-group">
                 <h5>{props.name}</h5>
                 <div className="count-price">
-                    <h6>${props.quantity}x</h6>
+                    <h6>{props.quantity}x</h6>
                     <p>@${props.price}</p>
                     <p>${props.price*props.quantity}</p>
                 </div>
